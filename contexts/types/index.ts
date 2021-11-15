@@ -23,8 +23,8 @@ export type JsonResponse = {
 }
 
 export type User = {
-    first_name: string,
-    last_name: string,
+    name: string,
+    username: string,
     email: string,
     password: string,
     created_at: string,

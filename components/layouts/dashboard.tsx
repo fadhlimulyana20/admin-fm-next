@@ -17,30 +17,30 @@ type Props = {
 }
 
 export default function DashboardLayout(props: Props) {
-    // const { globalState, dispatch } = useContext(Context);
+    const { globalState, dispatch } = useContext(Context);
 
-    // const [user, setUser] = useState<User>(null)
+    const [user, setUser] = useState<User>(null)
   
-    // const router = useRouter()
+    const router = useRouter()
   
-    // const fetchUser = (token: string) => {
-    //     axios.get<JsonResponse, AxiosResponse<JsonResponse>>(`${backendUrl}/auth/me`, {
-    //         headers: {
-    //             Authorization: `Bearer ${token}`
-    //         }
-    //     }).then(res => {
-    //         setUser(res.data.data)
-    //         dispatch({ type: "SET_USER", payload: res.data.data })
-    //     }).catch(err => {
-    //         dispatch({ type: 'LOGOUT', payload: null })
-    //         router.push('/')
-    //     })
-    // }
+    const fetchUser = (token: string) => {
+        axios.get<JsonResponse, AxiosResponse<JsonResponse>>(`${backendUrl}/auth/me`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then(res => {
+            setUser(res.data.data)
+            dispatch({ type: "SET_USER", payload: res.data.data })
+        }).catch(err => {
+            dispatch({ type: 'LOGOUT', payload: null })
+            router.push('/')
+        })
+    }
   
-    // useEffect(() => {
-    //     const token = Cookies.get("token")
-    //     fetchUser(token)
-    // }, [])
+    useEffect(() => {
+        const token = Cookies.get("token")
+        fetchUser(token)
+    }, [])
 
     return (
         <React.Fragment>

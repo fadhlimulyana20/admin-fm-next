@@ -84,7 +84,7 @@ export default function Navbar() {
                                 <span>
                                     <FontAwesomeIcon icon={faUser} /> 
                                     <span className='ms-2 mb-0'>
-                                        {globalState.isUserAuthenticated ? globalState.loggedUser.first_name : ''}
+                                        {globalState.isUserAuthenticated ? globalState.loggedUser.username : ''}
                                     </span>
                                 </span>
                             )}

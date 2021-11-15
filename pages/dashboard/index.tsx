@@ -15,7 +15,7 @@ export default function Index() {
             <Container>
                 <div className="content-admin">
                     <div className="alert alert-success p-3 px-4 rounded-3">
-                        <h5 className="mb-0">Halo, {globalState.loggedUser ? globalState.loggedUser.first_name : ''} 👋</h5>
+                        <h5 className="mb-0">Halo, {globalState.loggedUser ? globalState.loggedUser.name : ''} 👋</h5>
                         <p className="mb-0">Apa kabar kamu hari ini?</p>
                     </div>
                 </div>
